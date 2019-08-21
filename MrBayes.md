@@ -53,7 +53,7 @@ mpirun -np 10 mb $1
 begin mrbayes;
         set autoclose=yes nowarn = yes;
         execute projects/rrg-[storage_account]/[account_user]/Xlaevis_biogeo_project/X_laevis_12_JM.nex;
-        lset nst=6 rates=gamma; #from Jmodeltest
+        lset nst=6 rates=invgamma; #from Jmodeltest
         mcmc nruns=5 Nchains=4 ngen=1000000 samplefreq=1000 relburnin=yes burninfrac=0.25 savebrlens=yes Mcmcdiagn = yes file=projects/rrg-[storage_account]/[account_user]/Xlaevis_biogeo_project/laevis2019_MrBayes.nex;
         sump relburnin=yes burninfrac=0.25;
         sumt relburnin=yes burninfrac=0.25;
